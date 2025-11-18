@@ -7,6 +7,7 @@ from typing import List, Optional
 import pandas as pd
 import re
 import os
+
 # Ajuste forçado para redeploy no Vercel
 BASE_DIR = os.path.dirname(__file__)
 EXCEL_PATH = os.path.join(BASE_DIR, "REGRA_SAIDA.xlsx")
@@ -117,14 +118,3 @@ def api_filter(req: FilterRequest):
         )
         for _, r in filtrado.iterrows()
     ]
-        item = CFOPItem(
-            cfop = r.get("CFOP",""),
-            descricao = r.get("DESCR_NAT",""),
-            procedencia = r.get("PROCEDENCIA",""),
-            ufs = sorted(list(r.get("_UF_SET", []))),
-            codtmv = r.get("CODTMV",""),
-            icms_op = r.get("ICMS_OP",""),
-            icms_st = r.get("ICMS_ST","")
-        )
-        out.append(item)
-    return out
