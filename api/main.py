@@ -7,7 +7,7 @@ from typing import List, Optional
 import pandas as pd
 import re
 import os
-
+# Ajuste forçado para redeploy no Vercel
 # Caminhos relativos para produção
 BASE_DIR = os.path.dirname(__file__)
 EXCEL_PATH = os.path.join(BASE_DIR, "REGRA_SAIDA.xlsx")
